@@ -359,6 +359,9 @@ class Console:
 
         #Read in dolphin's controller config file
         controller_config_path = self._get_dolphin_config_path() + "GCPadNew.ini"
+        print(controller_config_path)
+        # controller_config_path = "C:\\Users\\anand\\AppData\\Roaming\\Slippi Launcher\\playback\\User\\Config\\Profiles\\GCPad\\gamepad.ini"
+        print("HEEEEY\n\n\n\n\n\n\n")
         config = configparser.ConfigParser()
         config.read(controller_config_path)
 
@@ -402,7 +405,8 @@ class Console:
             config.set(section, 'Triggers/Threshold', '90.00000000000000')
         #This section is unused if it's not a standard input (I think...)
         else:
-            config.set(section, 'Device', 'XInput2/0/Virtual core pointer')
+            # config.set(section, 'Device', 'XInput2/0/Virtual core pointer')
+            pass
 
         with open(controller_config_path, 'w') as configfile:
             config.write(configfile)
